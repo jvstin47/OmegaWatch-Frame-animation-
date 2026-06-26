@@ -68,8 +68,14 @@ export default function ScrollCanvas({
 
       let drawWidth, drawHeight, x, y;
       
-      // Fine-tuned framing padding
-      const scaleFactor = 0.88;
+      // Responsive scaling and positioning for portrait viewports (mobile/tablet)
+      const isPortrait = canvasWidth < canvasHeight;
+      let scaleFactor = 0.88;
+      
+      if (isPortrait) {
+        // Scale up the watch in portrait mode to make it prominent and detailed
+        scaleFactor = 1.35;
+      }
 
       if (imgRatio > canvasRatio) {
         drawWidth = canvasWidth * scaleFactor;
@@ -80,7 +86,13 @@ export default function ScrollCanvas({
       }
 
       x = (canvasWidth - drawWidth) / 2;
-      y = (canvasHeight - drawHeight) / 2;
+      
+      if (isPortrait) {
+        // Shift watch upwards to make room for bottom text overlays and HUD elements
+        y = (canvasHeight * 0.40) - (drawHeight / 2);
+      } else {
+        y = (canvasHeight - drawHeight) / 2;
+      }
 
       ctx.drawImage(img, x, y, drawWidth, drawHeight);
     };

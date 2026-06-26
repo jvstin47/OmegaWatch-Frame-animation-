@@ -304,6 +304,10 @@ body {
   text-shadow: 0 2px 20px rgba(7, 17, 31, 0.95);
 }
 
+.hero-title--detail {
+  font-size: 3.75rem;
+}
+
 .hero-desc {
   font-family: var(--font-sans);
   font-size: 0.95rem;
@@ -320,33 +324,59 @@ body {
 }
 
 @media (max-width: 992px) {
+  .hero-scroll-container {
+    height: 380vh; /* Shorter scroll height on tablets/mobile to be less fatiguing */
+  }
+
+  .hero-gradient-overlay {
+    background: linear-gradient(0deg, rgba(7, 17, 31, 0.95) 0%, rgba(7, 17, 31, 0.5) 50%, rgba(7, 17, 31, 0) 85%);
+  }
+
   .hero-text-overlay {
     left: 0;
     width: 100%;
     min-width: auto;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end; /* Push text down to clear the shifted watch canvas */
     text-align: center;
-    padding: 0 2rem;
-    background: rgba(7, 17, 31, 0.7); /* Dark background overlay on tablets/mobile */
+    padding: 0 1.5rem 8.5rem 1.5rem; /* Space for the bottom HUD badge */
+    background: transparent; /* Remove solid block overlay to let watch shine through */
   }
   
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+  }
+
+  .hero-title--detail {
+    font-size: 2rem;
   }
   
   .hero-desc {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     max-width: 480px;
+    margin-bottom: 1.5rem;
+  }
+
+  .scroll-cue {
+    display: none !important; /* Hide scroll cue on mobile/tablets to avoid overlapping HUD */
   }
 }
 
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.75rem;
+  .hero-scroll-container {
+    height: 320vh; /* Snappier scroll rhythm for mobile */
   }
+
+  .hero-title {
+    font-size: 2.15rem;
+  }
+
+  .hero-title--detail {
+    font-size: 1.75rem;
+  }
+
   .hero-desc {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -490,17 +520,32 @@ body {
   font-size: 7px;
 }
 
+@media (max-width: 992px) {
+  .hud-badge {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    min-width: auto;
+    padding: 1.25rem;
+    backdrop-filter: blur(16px);
+    background-color: rgba(15, 30, 51, 0.65);
+    border: 1px solid var(--color-glass-border);
+  }
+}
+
 @media (max-width: 768px) {
   .hud-badge {
-    bottom: 2rem;
-    right: 2rem;
-    left: 2rem;
-    min-width: auto;
     padding: 1rem;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
+  }
+  .hud-badge__main {
+    font-size: 0.95rem;
   }
   .canvas-loader-indicator {
-    bottom: 2rem;
-    left: 2rem;
+    bottom: 1.25rem;
+    left: 1.25rem;
   }
 }
 
@@ -565,9 +610,27 @@ body {
 }
 
 @media (max-width: 992px) {
+  .transition-section {
+    padding: 6rem 0;
+  }
   .transition-grid {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 3rem;
+  }
+  .transition-heading {
+    font-size: 2.15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .transition-section {
+    padding: 4rem 0;
+  }
+  .glass-panel {
+    padding: 1.75rem;
+  }
+  .transition-heading {
+    font-size: 1.85rem;
   }
 }
 
@@ -649,9 +712,24 @@ body {
 }
 
 @media (max-width: 992px) {
+  .specs-section {
+    padding: 6rem 0;
+  }
   .specs-grid {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .specs-section {
+    padding: 4rem 0;
+  }
+  .specs-image-wrapper {
+    margin-bottom: 1.5rem;
+  }
+  .spec-card {
+    padding: 1.75rem;
   }
 }
 
@@ -716,12 +794,29 @@ body {
   opacity: 0.9;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+  .showcase-section {
+    padding: 7rem 0;
+  }
   .showcase-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase-section {
+    padding: 4rem 0;
+  }
+  .showcase-title {
+    font-size: 2.25rem;
   }
   .showcase-desc {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
+    margin-bottom: 2rem;
+  }
+  .showcase-visual {
+    max-width: 320px;
+    margin-bottom: 2rem;
   }
 }
 

@@ -252,7 +252,7 @@ export default function App() {
             }}
           >
             <span className="hero-label">Chronograph Gears</span>
-            <h2 className="hero-title" style={{ fontSize: '3.75rem' }}>THE WHEEL TRAIN</h2>
+            <h2 className="hero-title hero-title--detail">THE WHEEL TRAIN</h2>
             <p className="hero-desc">
               A micro-engineered network of gears transfers mechanical power from the mainspring barrel to the escapement wheel with mathematical consistency.
             </p>
@@ -269,7 +269,7 @@ export default function App() {
             }}
           >
             <span className="hero-label">Escapement</span>
-            <h2 className="hero-title" style={{ fontSize: '3.75rem' }}>FRICTIONLESS KINETICS</h2>
+            <h2 className="hero-title hero-title--detail">FRICTIONLESS KINETICS</h2>
             <p className="hero-desc">
               Unlike the sliding contact of a Swiss lever, the Co-Axial escapement transmits energy using direct radial impulses. This reduces mechanical friction and rate decay over time.
             </p>
@@ -286,7 +286,7 @@ export default function App() {
             }}
           >
             <span className="hero-label">Anti-Magnetism</span>
-            <h2 className="hero-title" style={{ fontSize: '3.75rem' }}>15,000 GAUSS SHIELD</h2>
+            <h2 className="hero-title hero-title--detail">15,000 GAUSS SHIELD</h2>
             <p className="hero-desc">
               Utilizing a silicon hairspring and non-magnetic materials for the pivots, the calibre maintains precise oscillation inside high-intensity magnetic fields.
             </p>
@@ -303,7 +303,7 @@ export default function App() {
             }}
           >
             <span className="hero-label">Metrology</span>
-            <h2 className="hero-title" style={{ fontSize: '3.75rem' }}>METAS STANDARDS</h2>
+            <h2 className="hero-title hero-title--detail">METAS STANDARDS</h2>
             <p className="hero-desc">
               Subjected to 8 rigorous checks over 10 days, each movement is validated for power reserve, water resistance, and precision variance across multiple physical planes.
             </p>
